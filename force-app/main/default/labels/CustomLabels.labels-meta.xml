@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>EUREKA_DEVOPS_IGNITED</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>EUREKA_DEVOPS_IGNITED</shortDescription>
+        <value>From thought to pipeline — execution begins here.</value>
+    </labels>
+</CustomLabels>
