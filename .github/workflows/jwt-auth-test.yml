@@ -1,10 +1,12 @@
-name: JWT Auth Test
+name: Deploy to Salesforce
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
-  authenticate:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,8 +28,11 @@ jobs:
             --jwt-key-file server.key \
             --username ${{ secrets.SF_USERNAME }} \
             --instance-url ${{ secrets.SF_LOGIN_URL }} \
-            --alias DevHub
+            --alias DevOrg
 
-      - name: Display Org Info
+      - name: Deploy Metadata
         run: |
-          sf org display --target-org DevHub
+          sf project deploy start \
+            --source-dir force-app \
+            --target-org DevOrg \
+            --wait 10
